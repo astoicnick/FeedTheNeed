@@ -16,4 +16,3 @@ namespace FeedTheNeed.Data
         public string OrganizationBio { get; set; }
     }
 }
-}

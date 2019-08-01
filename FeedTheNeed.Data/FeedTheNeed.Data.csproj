@@ -54,7 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IdentityModels.cs" />
+    <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Organization.cs" />
     <Compile Include="Posting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
