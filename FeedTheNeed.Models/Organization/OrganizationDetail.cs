@@ -5,15 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeedTheNeed.Data
+namespace FeedTheNeed.Models.Organization
 {
-    public class Organization
+    public class OrganizationDetail
     {
-        [Key]
+        [Display(Name = "Organization ID")]
         public int OrganizationID { get; set; }
-        public Guid OwnerID { get; set; }
+        [Display(Name = "Organization Name")]
         public string OrganizationName { get; set; }
+        [Display(Name = "Organization Link")]
         public string OrganizationLink { get; set; }
+        [Display(Name = "Organization Bio")]
         public string OrganizationBio { get; set; }
+        public override string ToString() => $"[{OrganizationID}] {OrganizationName} {OrganizationLink} {OrganizationBio}";
     }
 }

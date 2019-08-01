@@ -41,8 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrganizationService.cs" />
     <Compile Include="PostingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FeedTheNeed.Data\FeedTheNeed.Data.csproj">
+      <Project>{23F3425E-83FF-4B91-88A8-3EC35342EEE3}</Project>
+      <Name>FeedTheNeed.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FeedTheNeed.Models\FeedTheNeed.Models.csproj">
+      <Project>{3FB960BD-E26C-47DA-A942-16834A843310}</Project>
+      <Name>FeedTheNeed.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
