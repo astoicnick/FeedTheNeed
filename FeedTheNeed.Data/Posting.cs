@@ -81,9 +81,14 @@ namespace FeedTheNeed.Data
         public string Address { get; set; }
         [Required]
         public StateList State { get; set; }
+        [ForeignKey(nameof(User))]
         public string PhoneNumber { get; set; }
+        public virtual User User { get; set; }
         [Required]
+        [ForeignKey(nameof(User))]
         public string Email { get; set; }
+        public virtual User User { get; set; }
+
         public string NameOfProvider { get; set; }
         [Required]
         public DonationCategory Category { get; set; }
