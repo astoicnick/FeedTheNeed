@@ -29,27 +29,27 @@ namespace FeedTheNeed.Data
                 .Conventions
                 .Remove<PluralizingTableNameConvention>();
 
-            modelBuilder.Entity<Posting>
+            modelBuilder.Entity<Posting>()
                 .HasRequired(p => p.User);
         }
     }
-    //Creating the primary key for our user
-    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
-    {
-        public IdentityUserLoginConfiguration()
-        {
-            HasKey(iul => iul.UserID);
-        }
-    }
-    //Creating primary key for user role
-    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
-    {
+    ////Creating the primary key for our user
+    //public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+    //{
+    //    public IdentityUserLoginConfiguration()
+    //    {
+    //        HasKey(iul => iul.UserID);
+    //    }
+    //}
+    ////Creating primary key for user role
+    //public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
+    //{
 
-        public IdentityUserRoleConfiguration()
-        {
-            HasKey(iur => iur.UserID);
-        }
-    }
+    //    public IdentityUserRoleConfiguration()
+    //    {
+    //        HasKey(iur => iur.UserID);
+    //    }
+    //}
     public class ApplicationRole : IdentityRole
     {
         public ApplicationRole() : base() { }
