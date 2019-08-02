@@ -10,7 +10,7 @@ namespace FeedTheNeed.Models.Posting
     class PostingUpdate
     {
         public int PostID { get; set; }
-        public string UserID { get; set; }
+        public int UserID { get; set; }
         public string Title { get; set; }
         public string Details { get; set; }
         public string Address { get; set; }
