@@ -28,7 +28,7 @@ namespace FeedTheNeed.Services
                 };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Organizations.Add(entity);
+                ctx.OrganizationTable.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -38,7 +38,7 @@ namespace FeedTheNeed.Services
             {
                 var query =
                     ctx
-                        .Organizations
+                        .OrganizationTable
                         .Where(e => e.OwnerID == _userId)
                         .Select(
                             e =>
@@ -59,7 +59,7 @@ namespace FeedTheNeed.Services
             {
                 var entity =
                     ctx
-                        .Organizations
+                        .OrganizationTable
                         .Single(e => e.OrganizationID == organizationsId && e.OwnerID == _userId);
                 return
                     new OrganizationDetail
@@ -77,7 +77,7 @@ namespace FeedTheNeed.Services
             {
                 var entity =
                     ctx
-                        .Organizations
+                        .OrganizationTable
                         .Single(e => e.OrganizationID == model.OrganizationID && e.OwnerID == _userId);
 
                 entity.OrganizationName = model.OrganizationName;
@@ -93,10 +93,10 @@ namespace FeedTheNeed.Services
             {
                 var entity =
                     ctx
-                        .Organizations
+                        .OrganizationTable
                         .Single(e => e.OrganizationID == organizationId && e.OwnerID == _userId);
 
-                ctx.Organizations.Remove(entity);
+                ctx.OrganizationTable.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

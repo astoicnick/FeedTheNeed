@@ -9,6 +9,8 @@ namespace FeedTheNeed.Models.Organization
 {
     public class OrganizationEdit
     {
+        [Display(Name = "Organization ID")]
+        public int OrganizationID { get; set; }
         [Display(Name = "Organization Name")]
         public string OrganizationName { get; set; }
         [Display(Name = "Organization Link")]
