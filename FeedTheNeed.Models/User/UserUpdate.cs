@@ -10,7 +10,7 @@ namespace FeedTheNeed.Models.User
     public class UserUpdate
     {
         [Key]
-        public int UserID { get; set; }
+        public string UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
