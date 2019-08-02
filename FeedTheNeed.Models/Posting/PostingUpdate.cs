@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FeedTheNeed.Models.Posting
 {
-    class PostingUpdate
+    public class PostingUpdate
     {
         public int PostID { get; set; }
         public int UserID { get; set; }
