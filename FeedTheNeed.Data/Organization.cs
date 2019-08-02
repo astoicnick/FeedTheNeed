@@ -11,6 +11,7 @@ namespace FeedTheNeed.Data
     {
         [Key]
         public int OrganizationID { get; set; }
+        public Guid OwnerID { get; set; }
         public string OrganizationName { get; set; }
         public string OrganizationLink { get; set; }
         public string OrganizationBio { get; set; }
