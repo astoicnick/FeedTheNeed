@@ -14,13 +14,10 @@ namespace FeedTheNeed.Data
     public class User : IdentityUser
     {
         [Key]
-        public int UserID { get; set; }
+        public string UserId { get; set; }
         public string Role { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
-        public string PhoneNumber { get; set; }
-        public string Email { get; set; }
 
         public double HelpfulRating { get; set; }
 
@@ -29,6 +26,13 @@ namespace FeedTheNeed.Data
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             //What is this doing?
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            // Add custom user claims here
+            return userIdentity;
+        }
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager, string authenticationType)
+        {
+            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
             // Add custom user claims here
             return userIdentity;
         }
