@@ -18,6 +18,7 @@ public class ApplicationDbContext : IdentityDbContext<User>
     public DbSet<Posting> PostingTable { get; set; }
     public DbSet<Organization> OrganizationTable { get; set; }
 
+
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);

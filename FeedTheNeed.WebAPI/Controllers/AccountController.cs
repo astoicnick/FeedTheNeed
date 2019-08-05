@@ -17,6 +17,7 @@ using FeedTheNeed.WebAPI.Models;
 using FeedTheNeed.WebAPI.Providers;
 using FeedTheNeed.WebAPI.Results;
 using FeedTheNeed.Data;
+using FeedTheNeed.Models;
 
 namespace FeedTheNeed.WebAPI.Controllers
 {
@@ -79,7 +80,7 @@ namespace FeedTheNeed.WebAPI.Controllers
         [Route("ManageInfo")]
         public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl, bool generateState = false)
         {
-            IdentityUser user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            User user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
 
             if (user == null)
             {
@@ -111,6 +112,9 @@ namespace FeedTheNeed.WebAPI.Controllers
                 LocalLoginProvider = LocalLoginProvider,
                 Email = user.UserName,
                 Logins = logins,
+                FirstName= user.FirstName,
+                LastName = user.LastName,
+                PhoneNumber = user.PhoneNumber,
                 ExternalLoginProviders = GetExternalLogins(returnUrl, generateState)
             };
         }
@@ -329,7 +333,7 @@ namespace FeedTheNeed.WebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new User() { UserName = model.Email, Email = model.Email };
+            var user = new User() { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, PhoneNumber = model.PhoneNumber};
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
