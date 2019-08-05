@@ -71,9 +71,7 @@ namespace FeedTheNeed.Data
     {
         [Key]
         public int PostID { get; set; }
-        [ForeignKey(nameof(User))]
-        public string UserID { get; set; }
-        public virtual User User { get; set; }
+        public Guid UserID { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]
@@ -83,11 +81,11 @@ namespace FeedTheNeed.Data
         [Required]
         public StateList State { get; set; }
         //[ForeignKey(nameof(User))]
-        public string PhoneNumber { get; set; }
-        //public virtual User User { get; set; }
-        [Required]
-        //[ForeignKey(nameof(User))]
-        public string Email { get; set; }
+        //public string PhoneNumber { get; set; }
+        ////public virtual User User { get; set; }
+        //[Required]
+        ////[ForeignKey(nameof(User))]
+        //public string Email { get; set; }
         //public virtual User User { get; set; }
 
         public string NameOfProvider { get; set; }

@@ -1,5 +1,6 @@
 ﻿using FeedTheNeed.Data;
 using FeedTheNeed.Models.Organization;
+using FeedTheNeed.WebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

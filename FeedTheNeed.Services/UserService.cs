@@ -1,5 +1,6 @@
 ﻿using FeedTheNeed.Data;
-using FeedTheNeed.Models.User;
+
+using FeedTheNeed.WebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,13 +17,13 @@ namespace FeedTheNeed.Services
             _userId = userid;
         }
         
-        public bool ModifyUser(UserCreate user)
+        public bool ModifyUser(ApplicationUser user)
         {
-            if (user.UserId == _userId.ToString())
+            if (user.Id == _userId.ToString())
             {
                 using (var ctx = new ApplicationDbContext())
                 {
-                    var userToChange = ctx.Users.Find(user.UserId);
+                    var userToChange = ctx.Users.Find(user.Id);
                    
                     userToChange.FirstName = user.FirstName;
                     userToChange.LastName = user.LastName;
@@ -34,18 +35,18 @@ namespace FeedTheNeed.Services
             return false;
         }
 
-        public UserDetail DetailUser(UserDetail user)
+        public ApplicationUser DetailUser(ApplicationUser user)
         {
-            if (user.UserId == _userId.ToString())
+            if (user.Id == _userId.ToString())
             {
                 using (var ctx = new ApplicationDbContext())
                 {
-                    var completeUserInfo = ctx.Users.Find(user.UserId);
+                    var completeUserInfo = ctx.Users.Find(user.Id);
                     user.Email = completeUserInfo.Email;
                     user.FirstName = completeUserInfo.FirstName;
                     user.LastName = completeUserInfo.LastName;
                     user.PhoneNumber = completeUserInfo.PhoneNumber;
-                    user.HelpfulRating = completeUserInfo.HelpfulRating;
+                    //user.HelpfulRating = completeUserInfo.HelpfulRating;
                     return user;
 
                 }
@@ -54,13 +55,13 @@ namespace FeedTheNeed.Services
         }
 
         // public DetailUser
-        public bool UpdateUser(UserUpdate userToUpdate)
+        public bool UpdateUser(ApplicationUser userToUpdate)
         {
-            if(userToUpdate.UserId == _userId.ToString())
+            if(userToUpdate.Id == _userId.ToString())
             {
                 using (var ctx = new ApplicationDbContext())
                 {
-                    var userToChange = ctx.Users.Find(userToUpdate.UserId);
+                    var userToChange = ctx.Users.Find(userToUpdate.Id);
                     //             public int UserID { get; set; }
                     //public string FirstName { get; set; }
                     //public string LastName { get; set; }
@@ -81,7 +82,7 @@ namespace FeedTheNeed.Services
             using(var ctx = new ApplicationDbContext())
             {
                 var user = ctx.Users.Find(userid);
-                var postingsToRemove = ctx.PostingTable.Where(u => u.UserID == userid.ToString());
+                var postingsToRemove = ctx.PostingTable.Where(u => u.UserID == userid);
                 foreach(var posting in postingsToRemove)
                 {
                     ctx.PostingTable.Remove(posting);

@@ -1,5 +1,6 @@
 ﻿using FeedTheNeed.Data;
 using FeedTheNeed.Models.Posting;
+using FeedTheNeed.WebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace FeedTheNeed.Services
         {
             var entity = new Posting()
             {
-                UserID = _userID.ToString(),
+                UserID = _userID,
                 Title = model.Title,
                 Details = model.Details,
                 Address = model.Address,
@@ -44,7 +45,7 @@ namespace FeedTheNeed.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var query = ctx.PostingTable.Where
-                    (e => e.UserID == _userID.ToString()).Select
+                    (e => e.UserID == _userID).Select
                     (e => new PostingListItem
                 {
                     PostID=e.PostID,
@@ -62,7 +63,7 @@ namespace FeedTheNeed.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.PostingTable.Single(e => e.PostID == id && e.UserID == _userID.ToString());
+                var entity = ctx.PostingTable.Single(e => e.PostID == id && e.UserID == _userID);
                 return new PostingDetails
                 {
                     PostID = entity.PostID,
@@ -71,8 +72,6 @@ namespace FeedTheNeed.Services
                     Address = entity.Address,
                     City = entity.City,
                     State = entity.State,
-                    PhoneNumber = entity.PhoneNumber,
-                    Email = entity.Email,
                     NameOfProvider = entity.NameOfProvider,
                     Category = entity.Category,
                     DatePosted = entity.DatePosted,
@@ -86,7 +85,7 @@ namespace FeedTheNeed.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.PostingTable.Single(e => e.PostID == model.PostID && e.UserID == _userID.ToString());
+                var entity = ctx.PostingTable.Single(e => e.PostID == model.PostID && e.UserID == _userID);
 
                 entity.Title = model.Title;
                 entity.Details = model.Details;
@@ -106,7 +105,7 @@ namespace FeedTheNeed.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.PostingTable.Single(e => e.PostID == id && e.UserID == _userID.ToString());
+                var entity = ctx.PostingTable.Single(e => e.PostID == id && e.UserID == _userID);
                 ctx.PostingTable.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
