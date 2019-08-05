@@ -42,15 +42,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Organization\OrganizationEdit.cs" />
     <Compile Include="Organization\OrganizationCreate.cs" />
     <Compile Include="Organization\OrganizationDetail.cs" />
+    <Compile Include="Organization\OrganizationEdit.cs" />
     <Compile Include="Organization\OrganizationListItem.cs" />
+    <Compile Include="Posting\PostingCreate.cs" />
+    <Compile Include="Posting\PostingDetails.cs" />
+    <Compile Include="Posting\PostingListItem.cs" />
+    <Compile Include="Posting\PostingUpdate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\UserCreate.cs" />
+    <Compile Include="User\UserDetail.cs" />
+    <Compile Include="User\UserUpdate.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Posting\" />
-    <Folder Include="User\" />
+    <Folder Include="User\"/>
+    <Folder Include="Posting\"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FeedTheNeed.Data\FeedTheNeed.Data.csproj">
+      <Project>{23f3425e-83ff-4b91-88a8-3ec35342eee3}</Project>
+      <Name>FeedTheNeed.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

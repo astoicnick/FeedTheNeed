@@ -72,7 +72,7 @@ namespace FeedTheNeed.Data
         [Key]
         public int PostID { get; set; }
         [ForeignKey(nameof(User))]
-        public int UserID { get; set; }
+        public string UserID { get; set; }
         public virtual User User { get; set; }
         [Required]
         public string Title { get; set; }
