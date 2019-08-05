@@ -16,7 +16,6 @@ using Microsoft.Owin.Security.OAuth;
 using FeedTheNeed.WebAPI.Models;
 using FeedTheNeed.WebAPI.Providers;
 using FeedTheNeed.WebAPI.Results;
-using FeedTheNeed.Data;
 
 namespace FeedTheNeed.WebAPI.Controllers
 {
@@ -251,7 +250,7 @@ namespace FeedTheNeed.WebAPI.Controllers
                 return new ChallengeResult(provider, this);
             }
 
-            User user = await UserManager.FindAsync(new UserLoginInfo(externalLogin.LoginProvider,
+            ApplicationUser user = await UserManager.FindAsync(new UserLoginInfo(externalLogin.LoginProvider,
                 externalLogin.ProviderKey));
 
             bool hasRegistered = user != null;
@@ -329,7 +328,7 @@ namespace FeedTheNeed.WebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new User() { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
@@ -358,7 +357,7 @@ namespace FeedTheNeed.WebAPI.Controllers
                 return InternalServerError();
             }
 
-            var user = new User() { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
 
             IdentityResult result = await UserManager.CreateAsync(user);
             if (!result.Succeeded)

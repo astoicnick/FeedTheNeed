@@ -54,24 +54,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201908021409331_first.cs" />
-    <Compile Include="Migrations\201908021409331_first.Designer.cs">
-      <DependentUpon>201908021409331_first.cs</DependentUpon>
+    <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\201908052051006_InitialAfterDrop.cs" />
+    <Compile Include="Migrations\201908052051006_InitialAfterDrop.Designer.cs">
+      <DependentUpon>201908052051006_InitialAfterDrop.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Organization.cs" />
     <Compile Include="Posting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908021409331_first.resx">
-      <DependentUpon>201908021409331_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908052051006_InitialAfterDrop.resx">
+      <DependentUpon>201908052051006_InitialAfterDrop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

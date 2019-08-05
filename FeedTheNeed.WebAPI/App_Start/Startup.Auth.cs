@@ -10,7 +10,6 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using FeedTheNeed.WebAPI.Providers;
 using FeedTheNeed.WebAPI.Models;
-using FeedTheNeed.Data;
 
 namespace FeedTheNeed.WebAPI
 {

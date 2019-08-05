@@ -10,7 +10,6 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using FeedTheNeed.WebAPI.Models;
-using FeedTheNeed.Data;
 
 namespace FeedTheNeed.WebAPI.Providers
 {
@@ -32,7 +31,7 @@ namespace FeedTheNeed.WebAPI.Providers
         {
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
-            User user = await userManager.FindAsync(context.UserName, context.Password);
+            ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
 
             if (user == null)
             {

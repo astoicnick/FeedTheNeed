@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2E269896-BF0D-46B3-977D-2FC5355C7CB7}</ProjectGuid>
+    <ProjectGuid>{029F3580-55B6-426A-B7FB-713B140CFF08}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -271,9 +271,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -313,14 +313,6 @@
       <Project>{23f3425e-83ff-4b91-88a8-3ec35342eee3}</Project>
       <Name>FeedTheNeed.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FeedTheNeed.Models\FeedTheNeed.Models.csproj">
-      <Project>{3fb960bd-e26c-47da-a942-16834a843310}</Project>
-      <Name>FeedTheNeed.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FeedTheNeed.Services\FeedTheNeed.Services.csproj">
-      <Project>{064ffe1b-e37c-4a70-b9e9-8e2835a4692b}</Project>
-      <Name>FeedTheNeed.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -338,7 +330,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>64607</DevelopmentServerPort>
+          <DevelopmentServerPort>52676</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44381/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

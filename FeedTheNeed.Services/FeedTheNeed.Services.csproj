@@ -68,6 +68,10 @@
       <Project>{3FB960BD-E26C-47DA-A942-16834A843310}</Project>
       <Name>FeedTheNeed.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FeedTheNeed.WebAPI\FeedTheNeed.WebAPI.csproj">
+      <Project>{029F3580-55B6-426A-B7FB-713B140CFF08}</Project>
+      <Name>FeedTheNeed.WebAPI</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

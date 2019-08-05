@@ -10,14 +10,12 @@ namespace FeedTheNeed.Models.Posting
     public class PostingCreate
     {
         public int PostID { get; set; }
-        public string UserID { get; set; }
+        public Guid UserID { get; set; }
         public string Title { get; set; }
         public string Details { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public StateList State { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Email { get; set; }
         public string NameOfProvider { get; set; }
         public DonationCategory Category { get; set; }
         public DateTime DatePosted { get; set; }
