@@ -1,5 +1,6 @@
 namespace FeedTheNeed.Data.Migrations
 {
+    using FeedTheNeed.WebAPI.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;

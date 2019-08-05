@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedTheNeed.Services", "Fee
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedTheNeed.Models", "FeedTheNeed.Models\FeedTheNeed.Models.csproj", "{3FB960BD-E26C-47DA-A942-16834A843310}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedTheNeed.WebAPI", "FeedTheNeed.WebAPI\FeedTheNeed.WebAPI.csproj", "{2E269896-BF0D-46B3-977D-2FC5355C7CB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedTheNeed.WebAPI", "FeedTheNeed.WebAPI\FeedTheNeed.WebAPI.csproj", "{029F3580-55B6-426A-B7FB-713B140CFF08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{3FB960BD-E26C-47DA-A942-16834A843310}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FB960BD-E26C-47DA-A942-16834A843310}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FB960BD-E26C-47DA-A942-16834A843310}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2E269896-BF0D-46B3-977D-2FC5355C7CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E269896-BF0D-46B3-977D-2FC5355C7CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E269896-BF0D-46B3-977D-2FC5355C7CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E269896-BF0D-46B3-977D-2FC5355C7CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{029F3580-55B6-426A-B7FB-713B140CFF08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{029F3580-55B6-426A-B7FB-713B140CFF08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{029F3580-55B6-426A-B7FB-713B140CFF08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{029F3580-55B6-426A-B7FB-713B140CFF08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

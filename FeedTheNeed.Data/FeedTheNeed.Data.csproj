@@ -54,10 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201908021409331_first.cs" />
-    <Compile Include="Migrations\201908021409331_first.Designer.cs">
-      <DependentUpon>201908021409331_first.cs</DependentUpon>
+    <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\201908051818279_comment.cs" />
+    <Compile Include="Migrations\201908051818279_comment.Designer.cs">
+      <DependentUpon>201908051818279_comment.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Organization.cs" />
@@ -70,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908021409331_first.resx">
-      <DependentUpon>201908021409331_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908051818279_comment.resx">
+      <DependentUpon>201908051818279_comment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
