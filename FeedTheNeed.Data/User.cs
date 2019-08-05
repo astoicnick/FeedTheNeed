@@ -21,6 +21,8 @@ namespace FeedTheNeed.Data
 
         public double HelpfulRating { get; set; }
 
+        
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
