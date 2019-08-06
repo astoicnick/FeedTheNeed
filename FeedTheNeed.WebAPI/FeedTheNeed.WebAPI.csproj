@@ -314,6 +314,14 @@
       <Project>{23f3425e-83ff-4b91-88a8-3ec35342eee3}</Project>
       <Name>FeedTheNeed.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FeedTheNeed.Models\FeedTheNeed.Models.csproj">
+      <Project>{3fb960bd-e26c-47da-a942-16834a843310}</Project>
+      <Name>FeedTheNeed.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FeedTheNeed.Services\FeedTheNeed.Services.csproj">
+      <Project>{064ffe1b-e37c-4a70-b9e9-8e2835a4692b}</Project>
+      <Name>FeedTheNeed.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
