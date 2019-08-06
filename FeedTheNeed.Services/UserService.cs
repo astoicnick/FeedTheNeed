@@ -27,7 +27,7 @@ namespace FeedTheNeed.Services
                    
                     userToChange.FirstName = user.FirstName;
                     userToChange.LastName = user.LastName;
-                    userToChange.PhoneNumber = user.PhoneNumber;
+                    //userToChange.PhoneNumber = user.PhoneNumber;
                     
                     return ctx.SaveChanges() == 1;
                 }

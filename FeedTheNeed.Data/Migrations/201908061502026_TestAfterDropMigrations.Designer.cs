@@ -7,13 +7,13 @@ namespace FeedTheNeed.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialAfterDrop : IMigrationMetadata
+    public sealed partial class TestAfterDropMigrations : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialAfterDrop));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TestAfterDropMigrations));
         
         string IMigrationMetadata.Id
         {
-            get { return "201908052051006_InitialAfterDrop"; }
+            get { return "201908061502026_TestAfterDropMigrations"; }
         }
         
         string IMigrationMetadata.Source

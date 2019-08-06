@@ -3,7 +3,7 @@ namespace FeedTheNeed.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialAfterDrop : DbMigration
+    public partial class TestAfterDropMigrations : DbMigration
     {
         public override void Up()
         {

@@ -55,9 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201908052051006_InitialAfterDrop.cs" />
-    <Compile Include="Migrations\201908052051006_InitialAfterDrop.Designer.cs">
-      <DependentUpon>201908052051006_InitialAfterDrop.cs</DependentUpon>
+    <Compile Include="Migrations\201908061502026_TestAfterDropMigrations.cs" />
+    <Compile Include="Migrations\201908061502026_TestAfterDropMigrations.Designer.cs">
+      <DependentUpon>201908061502026_TestAfterDropMigrations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Organization.cs" />
@@ -69,8 +69,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908052051006_InitialAfterDrop.resx">
-      <DependentUpon>201908052051006_InitialAfterDrop.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908061502026_TestAfterDropMigrations.resx">
+      <DependentUpon>201908061502026_TestAfterDropMigrations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

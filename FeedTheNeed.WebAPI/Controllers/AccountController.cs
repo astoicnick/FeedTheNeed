@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using FeedTheNeed.WebAPI.Models;
 using FeedTheNeed.WebAPI.Providers;
 using FeedTheNeed.WebAPI.Results;
+using FeedTheNeed.Services;
 
 namespace FeedTheNeed.WebAPI.Controllers
 {
@@ -78,7 +79,7 @@ namespace FeedTheNeed.WebAPI.Controllers
         [Route("ManageInfo")]
         public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl, bool generateState = false)
         {
-            IdentityUser user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            ApplicationUser user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
 
             if (user == null)
             {
@@ -109,6 +110,8 @@ namespace FeedTheNeed.WebAPI.Controllers
             {
                 LocalLoginProvider = LocalLoginProvider,
                 Email = user.UserName,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
                 Logins = logins,
                 ExternalLoginProviders = GetExternalLogins(returnUrl, generateState)
             };
@@ -132,6 +135,26 @@ namespace FeedTheNeed.WebAPI.Controllers
             }
 
             return Ok();
+        }
+
+        //POST api/Account/ChangeUserInfo
+        [Route("ChangeUserInfo")]
+        public IHttpActionResult ChangeUserInfo(ApplicationUser user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            UserService userService = CreateUserService();
+            if (!userService.ModifyUser(user)) return InternalServerError();
+            return Ok();
+
+        }
+        private UserService CreateUserService()
+        {
+            var userID = Guid.Parse(User.Identity.GetUserId());
+            var userService = new UserService(userID);
+            return userService;
         }
 
         // POST api/Account/SetPassword

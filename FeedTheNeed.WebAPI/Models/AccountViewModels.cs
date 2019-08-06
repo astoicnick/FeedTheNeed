@@ -19,6 +19,8 @@ namespace FeedTheNeed.WebAPI.Models
         public string LocalLoginProvider { get; set; }
 
         public string Email { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
         public IEnumerable<UserLoginInfoViewModel> Logins { get; set; }
 
